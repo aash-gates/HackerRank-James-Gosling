@@ -3,26 +3,20 @@ import java.util.Scanner;
 public class Solution {
 
     static boolean isAnagram(String a, String b) {
-        / if (a.length() != b.length()) {
-            return false;
-        }
-        a = a.toLowerCase();
-        b = b.toLowerCase();
-        int sum = 0;
-        for (char c = 'a'; c <= 'z'; c++) {
-            for (int i=0; i<a.length(); i++) {
-                if (a.charAt(i) == c) {
-                    sum++;
-                }
-                if (b.charAt(i) == c) {
-                    sum--;
-                }
-            }
-            if (sum != 0) {
-                return false;
-            }
-        }
-        return true;
+        import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String R = new StringBuilder(A).reverse().toString();
+        
+        if(A.equals(R)) System.out.println("Yes");
+        else System.out.println("No");
+    }
+}
     }
 
     public static void main(String[] args) {

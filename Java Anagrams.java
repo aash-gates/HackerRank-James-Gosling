@@ -2,21 +2,27 @@ import java.util.Scanner;
 
 public class Solution {
 
-    static boolean isAnagram(String a, String b) {
-        import java.io.*;
-import java.util.*;
+     private static int[] frequency = new int[26];
 
-public class Solution {
-    public static void main(String[] args) {
+    static boolean isAnagram(String a, String b) {
+        a = a.toLowerCase();
+        b = b.toLowerCase();
         
-        Scanner sc=new Scanner(System.in);
-        String A=sc.next();
-        String R = new StringBuilder(A).reverse().toString();
+        for (char c : a.toCharArray()) {
+            frequency[(int) c - 97]++;
+        }
+        for (char c : b.toCharArray()) {
+            frequency[(int) c - 97]--;
+        }
         
-        if(A.equals(R)) System.out.println("Yes");
-        else System.out.println("No");
-    }
-}
+        boolean anagrams = true;
+        for (int i : frequency) {
+            if (i != 0) {
+                anagrams = false;
+                break;
+            }
+        }
+        return anagrams;
     }
 
     public static void main(String[] args) {
